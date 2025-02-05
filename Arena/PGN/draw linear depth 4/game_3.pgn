@@ -1,0 +1,10 @@
+[Event "Masalot V1.0 conv depth 4 vs Stockfish 1320"]
+[Site "Chess Arena"]
+[Date "2025.01.15"]
+[Round "2"]
+[White "Masalot"]
+[Black "Stockfish"]
+[Result "0-1"]
+
+1. d4 Nf6 2. e4 e6 3. Nf3 Nxe4 4. Ne5 Nc6 5. Nxf7 Qh4 6. g3 Qf6 7. Bf4 Qxf7 8. Bg2 Nf6 9. O-O Be7 10. Re1 O-O 11. Bxc7 h6 12. c3 d6 13. Bxd6 Bxd6 14. Nd2 Be7 15. Nc4 Kh8 16. Bxc6 bxc6 17. Ne5 Qe8 18. Rc1 Bd6 19. Nc4 Be7 20. Ne5 Kh7 21. Qc2+ g6 22. a4 Bd7 23. Qe2 Bd6 24. Nc4 Be7 25. Ne5 a5 26. b4 Bd6 27. Rb1 axb4 28. cxb4 Be7 29. a5 Rg8 30. a6 Nd5 31. b5 Rf8 32. bxc6 Bc8 33. Nd7 Bxd7 34. cxd7 Qxd7 35. Rec1 Rad8 36. Qd3 e5 37. Re1 exd4 38. Qxd4 Bf6 39. Qc5 Bg7 40. Rb7 Qc8 41. Qxc8 Rxc8 42. Rd7 Nb6 43. Rb7 Rb8 44. Rxb8 Rxb8 45. Rb1 h5 46. h3 Bd4 47. Rd1 Bc5 48. Rc1 Bd6 49. Rc6 Be5 50. Re6 Bh8 51. Re7+ Kh6 52. Re6 Nd7 53. Rd6 Rb1+ 54. Kh2 Nb6 55. a7 Be5 56. Rxb6 Ra1 57. Rb7 Bd4 58. g4 Bxf2 59. g5+ Kxg5 60. h4+ Kh6 61. a8=N Rxa8 62. Kh3 Be1 63. Rb5 Ra6 64. Rb8 Bc3 65. Rc8 Be5 66. Re8 Bd4 67. Kg2 Ba1 68. Kg3 Ra3+ 69. Kf4 Bd4 70. Re4 Rd3 71. Re1 Rd2 72. Re8 Bf6 73. Rg8 Bxh4 74. Rh8+ Kg7 75. Ra8 Be7 76. Ke5 Bf6+ 77. Ke6 Bd8 78. Ra7+ Kg8 79. Rd7 Bg5 80. Rxd2 Bxd2 81. Kd7 Bc3 82. Kc6 Bd4 83. Kc7 g5 84. Kc8 g4 85. Kc7 Bg7 86. Kb7 Bf8 87. Kc7 Kh8 88. Kd7 h4 89. Ke8 g3 90. Kxf8 g2 91. Kf7 h3 92. Ke7 g1=Q 93. Kd6 h2 94. Ke6 Qg6+ 95. Kd7 Qg1 96. Ke6 h1=Q 97. Kd7 Qg3 98. Ke8 Qd3 99. Kf7 Qg3 100. Ke8 Qd3 101. Kf7 Qa1 102. Ke7 Qe5+ 103. Kf7 Qdf5# 0-1
+

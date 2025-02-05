@@ -1,0 +1,8 @@
+NO_GAMES = 10
+STOCKFISH_ELO_LIMIT = 1320
+STOCKFISH_DEPTH_LIMIT = 3
+CHESS_ENGINE_PORT = 12346
+STOCKFISH_TIME_LIMIT = 100
+STOCKFISH_PATH = "/home/maks/mgr/stockfish/src/stockfish"
+MASALOT_CONFIG = f'V1.2 Conv depth 2 + 2 vs stockfish ELO {STOCKFISH_ELO_LIMIT}, depth {STOCKFISH_DEPTH_LIMIT}'
+# UCI_Elo type spin default 1320 min 1320 max 3190

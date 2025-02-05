@@ -1,0 +1,10 @@
+[Event "Masalot V1.2 conv vs Stockfish 1320"]
+[Site "Chess Arena"]
+[Date "2025.01.16"]
+[Round "8"]
+[White "Masalot"]
+[Black "Stockfish"]
+[Result "1-0"]
+
+1. c4 e6 2. Nc3 Nf6 3. d4 d5 4. Nf3 Be7 5. cxd5 exd5 6. Qd3 Nc6 7. e3 Ne4 8. Nxe4 Nb4 9. Nf6+ gxf6 10. Qb5+ Kf8 11. Qa4 Bf5 12. Bb5 c6 13. Rf1 c5 14. dxc5 Nc2+ 15. Ke2 Rg8 16. Nh4 Bg4+ 17. Kd3 Rc8 18. Qxc2 Rg5 19. f4 Rxc5 20. Qxc5 Qa5 21. Qxe7+ Kxe7 22. a4 Rh5 23. Bd2 Qd8 24. Bb4+ Ke6 25. Be1 a6 26. Rc1 Qb6 27. Bf2 axb5 28. a5 Qd6 29. Rfe1 Qb4 30. f5+ Bxf5+ 31. Nxf5 Rg5 32. Nd4+ Kd7 33. a6 Rxg2 34. axb7 Qxb2 35. b8=Q Qxf2 36. Re2 Qxe2+ 37. Nxe2 b4 38. h3 Rf2 39. Rc7+ Ke6 40. Nf4+ Ke5 41. Rxf7+ Kf5 42. Nxd5 Kg6 43. Qg8+ Kf5 44. Rxf6+ Ke5 45. Qe6# 1-0
+

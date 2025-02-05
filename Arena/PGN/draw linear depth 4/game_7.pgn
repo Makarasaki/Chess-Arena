@@ -1,0 +1,10 @@
+[Event "Masalot V1.0 conv depth 4 vs Stockfish 1320"]
+[Site "Chess Arena"]
+[Date "2025.01.15"]
+[Round "6"]
+[White "Masalot"]
+[Black "Stockfish"]
+[Result "1-0"]
+
+1. d4 Nf6 2. e4 d5 3. Nc3 c6 4. e5 Ng4 5. Nf3 f6 6. Nxd5 Qxd5 7. Rg1 fxe5 8. Nxe5 Qe4+ 9. Be3 a5 10. h3 Nh6 11. Qh5+ Nf7 12. Qxf7+ Kd8 13. Bd3 Qxe3+ 14. fxe3 Nd7 15. Ke2 Nxe5 16. dxe5 Bg4+ 17. hxg4 Rg8 18. Qxg8 b6 19. Qxf8+ Kc7 20. Qxa8 h5 21. e6 h4 22. Bc4 h3 23. gxh3 g5 24. Qa7+ Kd8 25. Qb8# 1-0
+
