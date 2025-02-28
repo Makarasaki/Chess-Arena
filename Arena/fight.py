@@ -8,17 +8,8 @@ import chess.engine
 import chess.pgn
 
 from config import *
-import handle_masalot as masalot
-import handle_stockfish as stockfish
 
 def fen_match(fen1: str, fen2: str) -> bool:
-    """
-    Returns True if the first three parts of fen1 and fen2 match:
-      1) Piece placement
-      2) Side to move
-      3) Castling rights
-    Ignores en-passant, halfmove, and fullmove fields.
-    """
     fen1_parts = fen1.split()
     fen2_parts = fen2.split()
 
@@ -57,7 +48,7 @@ def handle_game(masalot_white, game_index):
     board = chess.Board()
 
     if not masalot_white:
-        engine_move = engine.play(board, chess.engine.Limit(depth=STOCKFISH_DEPTH_LIMIT))
+        engine_move = engine.play(board, chess.engine.Limit(time=STOCKFISH_TIME_LIMIT))
         board.push(engine_move.move)
         print("Stockfish first move:", engine_move.move)
         print(board)
@@ -67,7 +58,7 @@ def handle_game(masalot_white, game_index):
         # 1) Masalot’s move in FEN
         masalot_move_fen = communicate_with_masalot(s, board.fen())
         print(masalot_move_fen)
-        if len(masalot_move_fen) == 4:
+        if len(masalot_move_fen) < 8:
             move = masalot_move_fen
             print(board.push_uci(move))
         else:
@@ -81,10 +72,27 @@ def handle_game(masalot_white, game_index):
             break
 
         # 2) Stockfish's move
-        engine_move = engine.play(board, chess.engine.Limit(depth=STOCKFISH_DEPTH_LIMIT))
+        # engine_move = engine.play(board, chess.engine.Limit(time=STOCKFISH_TIME_LIMIT))
+        # board.push(engine_move.move)
+        # print("Stockfish's move:", engine_move.move)
+        # print(board)
+
+        engine_move = engine.play(
+            board, 
+            chess.engine.Limit(time=STOCKFISH_TIME_LIMIT),
+            info=chess.engine.Info.ALL  # Request full search info
+        )
         board.push(engine_move.move)
-        print("Stockfish's move:", engine_move.move)
+
+        # Retrieve search depth
+        search_depth = engine_move.info.get("depth", "Unknown")
+
+        print(f"Stockfish's move: {engine_move.move}, Search Depth: {search_depth}")
         print(board)
+
+    communicate_with_masalot(s, "clear")
+    time.sleep(0.1)  # Small delay to ensure sync
+
 
     # Determine final game result
     if board.is_checkmate():
@@ -123,6 +131,7 @@ def handle_game(masalot_white, game_index):
 
     # 4. Save to a file
     pgn_filename = f"PGN/game_{game_index + 1}.pgn"
+    # pgn_filename = f"PGN/game_{7}.pgn"
     with open(pgn_filename, "w") as f:
         print(game_pgn, file=f, end="\n\n")
 
