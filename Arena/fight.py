@@ -2,6 +2,7 @@
 import os
 import time
 import socket
+import csv
 
 import chess
 import chess.engine
@@ -37,6 +38,7 @@ def communicate_with_masalot(s, fen):
     return response
 
 def handle_game(masalot_white, game_index):
+    stockfish_info = [["depth", "nodes", "time"]]
     """Plays one game between Masalot and Stockfish.
        Saves the resulting game in PGN format to PGN/game_{game_index}.pgn.
     """
@@ -86,9 +88,18 @@ def handle_game(masalot_white, game_index):
 
         # Retrieve search depth
         search_depth = engine_move.info.get("depth", "Unknown")
+        nodes_searched = engine_move.info.get("nodes", "Unknown")  # Total nodes searched
+        search_time = engine_move.info.get("time", "Unknown")  # Time taken in seconds
 
+        stockfish_info.append([search_depth, nodes_searched, search_time])
         print(f"Stockfish's move: {engine_move.move}, Search Depth: {search_depth}")
         print(board)
+
+    print("Search ddetails of stockfish: ")
+    print(stockfish_info)
+    with open("output.csv", "w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerows(stockfish_info)  # Write multiple rows
 
     communicate_with_masalot(s, "clear")
     time.sleep(0.1)  # Small delay to ensure sync
@@ -122,7 +133,7 @@ def handle_game(masalot_white, game_index):
     game_pgn = chess.pgn.Game.from_board(board)
 
     # 3. Set some headers
-    game_pgn.headers["Event"] = f"Masalot {MASALOT_CONFIG} vs Stockfish {STOCKFISH_ELO_LIMIT}"
+    game_pgn.headers["Event"] = f"Masalot {MASALOT_CONFIG} vs Stockfish {STOCKFISH_ELO_LIMIT}, time limit: {STOCKFISH_TIME_LIMIT}"
     game_pgn.headers["Site"] = "Chess Arena"
     game_pgn.headers["Date"] = time.strftime("%Y.%m.%d", time.localtime())
     game_pgn.headers["Round"] = str(game_index)
@@ -152,7 +163,7 @@ if __name__ == "__main__":
             masalot_score += m_score
             stockfish_score += sf_score
             masalot_white = not masalot_white
-            print(f"Score fter game {i + 1}")
+            print(f"Score after game {i + 1}")
             print(f"Masalot {masalot_score} - {stockfish_score} Stockfish")
         
         print(f"Battle of {NO_GAMES} games has come to an end")
